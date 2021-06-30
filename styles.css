@@ -1,0 +1,41 @@
+body {
+    background-image: linear-gradient(92deg, rgba(194, 36, 36, .5), white, rgba(34, 34, 209,.5));
+    font-family: IM Fell English, sans-serif;
+}
+
+h1 {
+    margin-left: 2vw;
+}
+
+#search {
+    margin-left: 2vw;
+}
+#search > button {
+    border-radius: 8px;
+    width: 25%;
+    height: 40px;
+    font-size: 1.5rem;
+}
+#search > button:hover {
+    background-color: rgb(201, 199, 199);
+}
+
+/*congresspeople display*/
+#people {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%
+}
+.rep {
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    margin: 1vh 2vw;
+    width: 150px;
+}
+
+.rep img {
+    width: 100%;
+    height: auto;
+}
