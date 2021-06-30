@@ -83,7 +83,7 @@ function print(group, people, partySort) {
     }
 }
 function sortBy() {
-    const sort = document.querySelector('#sortBy').value;
+    const sort = document.querySelector('#sortBy').value; //which option to sort is selected
     const senButton = document.querySelector('#senate').dataset.selected;
     const repButton = document.querySelector('#house').dataset.selected;
     const allButton = document.querySelector('#all').dataset.selected;
@@ -130,8 +130,9 @@ function sortBy() {
         }
     }
 }
-function seniority() {
-
+function displayFacts(group) {
+    const age = group[i].age;
+    const seniority = group[i].seniority;
 }
 document.body.onload = displaySenator;
 document.querySelector('#senate').addEventListener('click', displaySenator);
