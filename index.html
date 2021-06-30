@@ -15,9 +15,30 @@
         <h1>People Of Congress</h1>
     </header>
     <main>
-        <div id = "search">
+        <div id = "search" class = "search">
             <button id = "senate">Senate</button>
             <button id = "house">House of Representatives</button>
+            <button id = "all">All</button>
+        </div>
+        <div class = "search">
+            <p>Sort By:</p>
+            <select id = "sortBy" name = "sortBy">
+                <option value = "all">All</option>
+                <option value = "seniority">Seniority</option>
+                <option value = "R">Republicans</option>
+                <option value = "D">Democrats</option>
+                <option value = "ID">Independents</option>
+            </select>
+            <!--<form id = 'sortBy'>
+                <label for = "seniority">Seniority</label>
+                <input type = "checkbox" id = "seniority" value = "seniority">
+                <label for = "republicans">Republicans</label>
+                <input type = "checkbox" id = "republicans" value = "republicans">
+                <label for = "democrats">Democrats</label>
+                <input type = "checkbox" id = "democrats" value = "democrats">
+                <label for = "independents">Independents</label>
+                <input type = "checkbox" id = "independents" value = "independents">
+            </form>-->
         </div>
         <div id = "people"></div>
     </main>

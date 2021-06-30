@@ -7,14 +7,26 @@ h1 {
     margin-left: 2vw;
 }
 
-#search {
+.search {
     margin-left: 2vw;
 }
 #search > button {
     border-radius: 8px;
-    width: 25%;
+    width: auto;
     height: 40px;
     font-size: 1.5rem;
+}
+#sortBy {
+    border-radius: 8px;
+    width: auto;
+    height: 40px;
+    font-size: 1.5rem;
+}
+[data-selected="yes"] {
+    background-color: rgb(201, 199, 199);
+}
+[data-selected="no"] {
+    background-color: #efefef;
 }
 #search > button:hover {
     background-color: rgb(201, 199, 199);
@@ -33,6 +45,13 @@ h1 {
     flex-direction: column;
     margin: 1vh 2vw;
     width: 150px;
+    text-align: center;
+    background-color: white;
+}
+@media screen and (max-width: 800px) {
+    .rep {
+        width: 25%;
+    }
 }
 
 .rep img {
