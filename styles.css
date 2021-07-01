@@ -40,27 +40,50 @@ h1 {
     width: auto;
     padding: 0;
 }
+/*#people {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeats(auto-fill, 1fr);
+    grid-row-gap: 2vw;
+    grid-column-gap: 2vw;
+}*/
 .rep {
     border: 3px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     margin: 1vh 2vw;
     width: 150px;
+    height: 250px;
     text-align: center;
     background-color: white;
+    box-sizing: border-box;
+}
+.rep:hover {
+    width: 175px;
 }
 @media screen and (max-width: 800px) {
     .rep {
         width: 25%;
+        height: 100%;
     }
 }
 .stats {
     flex-direction: column;
 }
 .stats img {
-    width: 10rem;
+    width: 20rem;
     height: auto;
+}
+.stats li, .stats p {
+    font-size: 1.5rem;
+}
+@media screen and (max-width: 400px) {
+    .stats img {
+        width: 75%;
+    }
 }
 
 .rep img {

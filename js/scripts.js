@@ -163,11 +163,14 @@ function displayFacts(group, div) {
     const repNameh2 = document.createElement('h2');
     const repName = document.createTextNode(`${group[index].first_name} ${group[index].last_name}`);
     repNameh2.append(repName);
-    const stateParty = document.createTextNode(`${group[index].party}: ${group[index].state}`);
+    const statePartyNode = document.createTextNode(`${group[index].party}: ${group[index].state}`);
+    const stateParty = document.createElement('p');
+    stateParty.append(statePartyNode);
     console.log(seniority);
     peopleDiv();
     const people = document.createElement('div');
     people.id = 'people';
+    people.classList.add('stats');
     const stats = document.createElement("ul");
     const senLi = document.createElement("li");
     const leadLi = document.createElement("li");
@@ -188,8 +191,6 @@ function displayFacts(group, div) {
     document.querySelector('main').append(people);
     people.style.flexDirection = "column";
     people.style.marginLeft = "2vw";
-    img.style.width = "25%";
-    img.style.height = "auto";
 }
 document.body.onload = displaySenator;
 document.querySelector('#senate').addEventListener('click', displaySenator);
