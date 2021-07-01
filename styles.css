@@ -37,12 +37,14 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 100%
+    width: auto;
+    padding: 0;
 }
 .rep {
     border: 3px solid black;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     margin: 1vh 2vw;
     width: 150px;
     text-align: center;
@@ -52,6 +54,13 @@ h1 {
     .rep {
         width: 25%;
     }
+}
+.stats {
+    flex-direction: column;
+}
+.stats img {
+    width: 10rem;
+    height: auto;
 }
 
 .rep img {

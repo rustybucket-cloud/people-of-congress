@@ -54,6 +54,11 @@ function print(group, people, partySort) {
         const state = group[i].state;
         const div = document.createElement('div');
         const img = document.createElement('img');
+        img.setAttribute("loading", "lazy");
+        div.setAttribute("data-id", id);
+        div.addEventListener("click", (e) => {
+            let ele = e.currentTarget 
+            displayFacts(group, ele) });
         const stateParty = document.createTextNode(`${party}: ${state}`);
         if (party === 'D') {
             div.style.backgroundColor = "rgb(59, 59, 255, .5)";
@@ -114,6 +119,7 @@ function sortBy() {
             print(representatives, people, 'none');
         }
     } else if (sort === "seniority") {
+        // code from https://www.javascripttutorial.net/array/javascript-sort-an-array-of-objects/
         if (senButton === "yes") {
             let senSort = senators.slice().sort((a, b) => {return b.seniority - a.seniority});
             print(senSort, people, 'none');
@@ -130,9 +136,60 @@ function sortBy() {
         }
     }
 }
-function displayFacts(group) {
-    const age = group[i].age;
-    const seniority = group[i].seniority;
+function displayFacts(group, div) {
+    const find = div.dataset.id;
+    let repId;
+    let index;
+    for (let i = 0; i < group.length; i++) {
+        if (group[i].id === find) {
+            repId = group[i].id;
+            index = i;
+        }
+    }
+    /*const i = senators.findIndex(function (element) {
+        return element = id;
+    });*/
+    console.log(repId);
+    const seniority = group[index].seniority;
+    let leadership = group[index].leadership_role;
+    leadership = leadership ? null: 'none';
+    const votes_with_party = group[index].votes_with_party_pct;
+    const next = group[index].next_election;
+    const photo = `images/${repId}.jpg`;
+    const img = document.createElement('img');
+    img.setAttribute('src', photo);
+    img.setAttribute('width', "225");
+    img.setAttribute('height', "225");
+    const repNameh2 = document.createElement('h2');
+    const repName = document.createTextNode(`${group[index].first_name} ${group[index].last_name}`);
+    repNameh2.append(repName);
+    const stateParty = document.createTextNode(`${group[index].party}: ${group[index].state}`);
+    console.log(seniority);
+    peopleDiv();
+    const people = document.createElement('div');
+    people.id = 'people';
+    const stats = document.createElement("ul");
+    const senLi = document.createElement("li");
+    const leadLi = document.createElement("li");
+    const votesLi = document.createElement("li");
+    const nextLi = document.createElement("li");
+    stats.append(senLi);
+    stats.append(leadLi);
+    stats.append(votesLi);
+    stats.append(nextLi);
+    senLi.append(document.createTextNode(`Seniority: ${seniority}`));
+    leadLi.append(document.createTextNode(`Leadership Position: ${leadership}`));
+    votesLi.append(document.createTextNode(`Votes with party: ${votes_with_party}%`));
+    nextLi.append(document.createTextNode(`Next Election ${next}`));
+    people.append(repNameh2);
+    people.append(stateParty);
+    people.append(img);
+    people.append(stats);
+    document.querySelector('main').append(people);
+    people.style.flexDirection = "column";
+    people.style.marginLeft = "2vw";
+    img.style.width = "25%";
+    img.style.height = "auto";
 }
 document.body.onload = displaySenator;
 document.querySelector('#senate').addEventListener('click', displaySenator);
