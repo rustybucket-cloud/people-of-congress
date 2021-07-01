@@ -61,8 +61,10 @@ h1 {
     background-color: white;
     box-sizing: border-box;
 }
-.rep:hover {
-    width: 175px;
+@media screen and (min-width: 800px) {
+    .rep:hover {
+        width: 175px;
+    }
 }
 @media screen and (max-width: 800px) {
     .rep {
