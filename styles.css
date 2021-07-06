@@ -21,6 +21,8 @@ h1 {
     width: auto;
     height: 40px;
     font-size: 1.5rem;
+    margin-top:.25rem;
+    margin-bottom: 1rem;
 }
 [data-selected="yes"] {
     background-color: rgb(201, 199, 199);
