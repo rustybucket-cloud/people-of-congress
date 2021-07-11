@@ -68,7 +68,7 @@ h2 {
 }
 @media screen and (min-width: 800px) {
     .rep:hover {
-        width: 175px;
+        transform: scale(1.15);
     }
 }
 @media screen and (max-width: 800px) {
